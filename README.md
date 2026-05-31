@@ -1,7 +1,7 @@
 # mesh-mic-drop-quiz
 
 [![pages](https://img.shields.io/badge/live-baditaflorin.github.io%2Fmesh-mic-drop-quiz-ff6699)](https://baditaflorin.github.io/mesh-mic-drop-quiz/)
-[![version](https://img.shields.io/badge/version-0.1.0-blue)](https://github.com/baditaflorin/mesh-mic-drop-quiz/blob/main/package.json)
+[![version](https://img.shields.io/badge/version-0.1.1-blue)](https://github.com/baditaflorin/mesh-mic-drop-quiz/blob/main/package.json)
 [![license](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 
 > Each peer authors one quiz Q; everyone takes turns hosting their own to the room.
