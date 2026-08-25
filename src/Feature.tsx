@@ -9,6 +9,7 @@ import {
   useMeshSlot,
   useNamedPeer,
   usePhase,
+  useRoster,
   type MeshConfig,
   type YRoom,
 } from "@baditaflorin/mesh-common";
@@ -39,7 +40,11 @@ function Body({ room, config }: { room: YRoom; config: MeshConfig }) {
   useEffect(() => () => clock.destroy(), [clock]);
   const slot = useMeshSlot(clock, SLOT_MS);
   const phase = usePhase<"writing" | "hosting" | "done">(room, "phase", "writing");
-  const rng = useFairRng(room, "quiz-salts");
+  const roster = useRoster(room);
+  const rng = useFairRng(room, "quiz-salts", {
+    peerIds: roster.present,
+    minContributors: 1,
+  });
   const answers = useEventLog<Answer>(room, "answers");
   const draft = useDraft<Draft>(`${config.storagePrefix}:draft`, EMPTY);
   const [, rerender] = useState(0);
